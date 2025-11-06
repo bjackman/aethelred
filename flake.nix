@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
@@ -8,6 +9,7 @@
     {
       self,
       nixpkgs,
+      nixpkgs-unstable,
       flake-utils,
     }:
     flake-utils.lib.eachDefaultSystem (
@@ -26,7 +28,11 @@
     // flake-utils.lib.eachDefaultSystemPassThrough (system: {
       nixosConfigurations.aethelred = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./modules/aethelred.nix ];
+        modules = [
+          ./modules/aethelred.nix
+          # Useful for poking around for experiments
+          { nix.registry.nixpkgs-unstable.flake = nixpkgs-unstable; }
+        ];
       };
     });
 }
