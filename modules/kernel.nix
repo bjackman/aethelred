@@ -18,6 +18,7 @@
       kernelModules = [ ];
       includeDefaultModules = false;
     };
+    kernelPackages = pkgs.linuxPackages_guest_memfd-physmap;
   };
   hardware.enableAllHardware = false;
 

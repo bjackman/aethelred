@@ -18,6 +18,23 @@
         "type": "github"
       }
     },
+    "kernel-guest_memfd-physmap": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1761844989,
+        "narHash": "sha256-aIDrlVLFGnZaP2a6H1cu0QDjxcu2WDUFihhD4Af4Up8=",
+        "owner": "bjackman",
+        "repo": "linux",
+        "rev": "473c46a3cb2a3c358f7804c675eceeddee0d1ae7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "bjackman",
+        "ref": "review/patrick-guest_memfd-physmap",
+        "repo": "linux",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1762233356,
@@ -53,6 +70,7 @@
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
+        "kernel-guest_memfd-physmap": "kernel-guest_memfd-physmap",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable"
       }
