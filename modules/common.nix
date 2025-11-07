@@ -9,4 +9,6 @@
 
     tmp.useTmpfs = true;
   };
+
+  nix.settings.require-sigs = false;
 }
