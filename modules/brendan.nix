@@ -51,4 +51,7 @@
       "qboot.rom"
     ];
   };
+
+  # Make things work nice when using SSH in Kity
+  environment.enableAllTerminfo = true;
 }
