@@ -12,4 +12,7 @@
     ./aethelred-hardware-configuration.nix
   ];
   networking.hostName = "aethelred";
+
+  # For running Firecracker tests
+  virtualisation.docker.enable = true;
 }
