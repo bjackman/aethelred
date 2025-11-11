@@ -18,19 +18,19 @@
         "type": "github"
       }
     },
-    "kernel-guest_memfd-physmap": {
+    "kernel-firecracker": {
       "flake": false,
       "locked": {
-        "lastModified": 1761844989,
-        "narHash": "sha256-aIDrlVLFGnZaP2a6H1cu0QDjxcu2WDUFihhD4Af4Up8=",
+        "lastModified": 1762875546,
+        "narHash": "sha256-ow/u3tt94u0t8DQkJf5TG5w4J5skHfQW1qsQuSFp1aA=",
         "owner": "bjackman",
         "repo": "linux",
-        "rev": "473c46a3cb2a3c358f7804c675eceeddee0d1ae7",
+        "rev": "1accbdf5ea7f39b7470c942f229e7e1e97ddb85e",
         "type": "github"
       },
       "original": {
         "owner": "bjackman",
-        "ref": "review/patrick-guest_memfd-physmap",
+        "ref": "firecracker-host",
         "repo": "linux",
         "type": "github"
       }
@@ -70,7 +70,7 @@
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "kernel-guest_memfd-physmap": "kernel-guest_memfd-physmap",
+        "kernel-firecracker": "kernel-firecracker",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable"
       }

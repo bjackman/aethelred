@@ -18,7 +18,7 @@
       kernelModules = [ ];
       includeDefaultModules = false;
     };
-    kernelPackages = pkgs.linuxPackages_guest_memfd-physmap;
+    kernelPackages = pkgs.linuxPackages_firecracker;
   };
   hardware.enableAllHardware = false;
 
