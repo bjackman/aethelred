@@ -38,11 +38,11 @@
     "kernel-firecracker-ephmap": {
       "flake": false,
       "locked": {
-        "lastModified": 1762946228,
-        "narHash": "sha256-v6BmBYdZRj+o5zXMzhpjkKOrAjWCYI0Hx2cHHuPjbjU=",
+        "lastModified": 1762960413,
+        "narHash": "sha256-zejLH6UusYwIAfw8rHetZ6JzSr1qiyaF8UQWfHEjeOU=",
         "owner": "bjackman",
         "repo": "linux",
-        "rev": "6cea5ca23285220252f78327d3da64bb3025d51b",
+        "rev": "52b7bd469752079bada4e5fa080ac033b455f9ee",
         "type": "github"
       },
       "original": {

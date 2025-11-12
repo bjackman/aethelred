@@ -10,7 +10,8 @@
       flake = false;
     };
     kernel-firecracker-ephmap = {
-      # Same as above, but with a simplistic ephmap call added to the write path.
+      # Same as above, but with a simplistic ephmap call added to the write path,
+      # with a simplistic TLB optimisation applied.
       url = "github:bjackman/linux?ref=firecracker-host+ephmap";
       flake = false;
     };
@@ -59,7 +60,7 @@
             # Use a massive config since that's the only thing I know makes Docker work.
             configfile = prev.linux.configfile;
           };
-          # "populate_latency": [2131.594, 2146.702, 2138.851, 2152.568, 2135.585, 2132.765, 2149.835, 2131.449, 2134.701, 2137.254, 2154.568, 2151.142, 2132.723, 2158.265, 2152.331, 2136.541, 2152.74, 2134.377, 2129.764, 2131.931, 2135.946, 2168.884, 2146.767, 2137.796, 2138.578, 2158.545, 2132.554, 2139.712, 2154.225, 2135.345]}
+          #  "populate_latency": [2056.114, 2060.27, 2040.085, 2060.202, 2075.324, 2033.987, 2057.317, 2035.927, 2058.438, 2056.828, 2061.481, 2031.189, 2029.544, 2040.335, 2032.227, 2041.634, 2041.136, 2061.472, 2066.608, 2053.442, 2038.645, 2062.134, 2036.871, 2062.678, 2056.329, 2057.52, 2056.166, 2056.378, 2061.378, 2063.784]}
           linuxPackages_firecracker-ephmap = prev.linuxPackages_custom {
             version = "6.17.0-rc3";
             src = inputs.kernel-firecracker-ephmap;
