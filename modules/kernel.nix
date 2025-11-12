@@ -18,7 +18,7 @@
       kernelModules = [ ];
       includeDefaultModules = false;
     };
-    kernelPackages = pkgs.linuxPackages_firecracker;
+    kernelPackages = pkgs.linuxPackages_firecracker-ephmap;
   };
   hardware.enableAllHardware = false;
 
