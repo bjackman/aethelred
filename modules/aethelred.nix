@@ -14,11 +14,5 @@
   networking.hostName = "aethelred";
 
   # For running Firecracker tests
-  virtualisation.docker = {
-    enable = true;
-    rootless = {
-      enable = true;
-      setSocketVariable = true;
-    };
-  };
+  virtualisation.docker.enable = true;
 }
