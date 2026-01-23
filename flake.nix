@@ -15,6 +15,10 @@
       url = "github:bjackman/linux?ref=firecracker-host+ephmap";
       flake = false;
     };
+    kernel-benchmarks-nix = {
+      url = "github:bjackman/kernel-benchmarks-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -23,6 +27,7 @@
       nixpkgs,
       nixpkgs-unstable,
       flake-utils,
+      kernel-benchmarks-nix,
       ...
     }:
     flake-utils.lib.eachDefaultSystem (
@@ -43,12 +48,14 @@
         system = "x86_64-linux";
         modules = [
           ./modules/aethelred.nix
+          kernel-benchmarks-nix.nixosModules.benchmarks.firecracker-perf-tests
           {
             # Useful for poking around for experiments
             nix.registry.nixpkgs-unstable.flake = nixpkgs-unstable;
             nixpkgs.overlays = [ self.overlays.firecracker ];
           }
         ];
+        specialArgs = { inherit self; };
       };
 
       overlays.firecracker = (
