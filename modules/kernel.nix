@@ -33,18 +33,5 @@
     pkgs.linuxPackages_latest.perf
   ];
 
-  # Make the kernel build tree visible in /run/booted-system/kernel-build.
-  # Not sure if this is actually useful, there are no headers in there. But it's
-  # interesting so dropping this code in while I have it.
-  system.extraSystemBuilderCmds =
-    let
-      kernelDevPath = config.boot.kernelPackages.kernel.dev;
-      kernelModDirVersion = config.boot.kernelPackages.kernel.modDirVersion;
-      kernelBuildActualPath = "${kernelDevPath}/lib/modules/${kernelModDirVersion}/build";
-    in
-    ''
-      ln -s "${kernelBuildActualPath}" $out/kernel-build
-    '';
-
   services.getty.autologinUser = "root";
 }
