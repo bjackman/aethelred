@@ -66,7 +66,13 @@
             };
         in
         {
-          aethelred = mkConfig [ ];
+          base = mkConfig [ ];
+          skip-flush = mkConfig [
+            {
+              boot.kernelParams = [ "kvm.guest_memfd_tlb_flush=0" ];
+              system.nixos.variantName = "skip-flush";
+            }
+          ];
         };
 
       overlays.firecracker = (
