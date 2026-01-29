@@ -128,11 +128,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1769168319,
-        "narHash": "sha256-Bb42QOIP+SGC5lar7NqDgkhPBiWnU1K7jvn/xtIcDl8=",
+        "lastModified": 1769695195,
+        "narHash": "sha256-6L+bxS7yDIRmYDPdueZp9pXtUYB4rctZn0YKyvjkJ0w=",
         "owner": "bjackman",
         "repo": "kernel-benchmarks-nix",
-        "rev": "c91415e9686840addde4c6eedaf8be5bc076c8f2",
+        "rev": "53a10284bc45e7a3430141863e936fd57961822c",
         "type": "github"
       },
       "original": {

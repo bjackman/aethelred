@@ -58,6 +58,7 @@
               system = "x86_64-linux";
               modules = [
                 ./modules/aethelred.nix
+                kernel-benchmarks-nix.nixosModules.default
                 kernel-benchmarks-nix.nixosModules.benchmarks.firecracker-perf-tests
                 {
                   # Useful for poking around for experiments
