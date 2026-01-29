@@ -8,6 +8,7 @@
       # https://github.com/firecracker-microvm/firecracker/pull/5637/commits/d043dc54b7326350b1c9b715cf784b06f5547d7f
       # (At that commit of the firecracker tree)
       # Then rebased onto a linux-next, with a couple of fixups and a new modparam.
+      # This is coupled with the exact version of firecracker used below.
       url = "github:bjackman/linux?ref=firecracker-host-2";
       flake = false;
     };
@@ -21,6 +22,8 @@
       # Using an experimental new version of this thing.
       url = "github:bjackman/kernel-benchmarks-nix?ref=v2";
       inputs.nixpkgs.follows = "nixpkgs";
+      # Pin firecracker to a version that works with the kernels above.
+      inputs.firecracker.url = "github:firecracker-microvm/firecracker?rev=d043dc54b7326350b1c9b715cf784b06f5547d7f";
     };
   };
 
