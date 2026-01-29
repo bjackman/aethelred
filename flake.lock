@@ -159,23 +159,6 @@
         "type": "github"
       }
     },
-    "kernel-firecracker-ephmap": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1762962386,
-        "narHash": "sha256-Gpox9uVbqCrQlc7pLR2eAHYDP27GNWbAdbfVQ/Xs/fU=",
-        "owner": "bjackman",
-        "repo": "linux",
-        "rev": "372fea527fa8ec10447de3a73ff1d947aac0dcca",
-        "type": "github"
-      },
-      "original": {
-        "owner": "bjackman",
-        "ref": "firecracker-host+ephmap",
-        "repo": "linux",
-        "type": "github"
-      }
-    },
     "limmat": {
       "inputs": {
         "flake-utils": "flake-utils_3",
@@ -261,7 +244,6 @@
         "flake-utils": "flake-utils",
         "kernel-benchmarks-nix": "kernel-benchmarks-nix",
         "kernel-firecracker": "kernel-firecracker",
-        "kernel-firecracker-ephmap": "kernel-firecracker-ephmap",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable"
       }

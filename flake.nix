@@ -12,12 +12,6 @@
       url = "github:bjackman/linux?ref=firecracker-host-2";
       flake = false;
     };
-    kernel-firecracker-ephmap = {
-      # Old version of the above, but with a simplistic ephmap call added to the
-      # write path, with a simplistic TLB optimisation applied.
-      url = "github:bjackman/linux?ref=firecracker-host+ephmap";
-      flake = false;
-    };
     kernel-benchmarks-nix = {
       # Using an experimental new version of this thing.
       url = "github:bjackman/kernel-benchmarks-nix?ref=v2";
@@ -88,13 +82,6 @@
             # Use a massive config since that's the only thing I know makes Docker work.
             # This one has at least been through a make localmodconfig dance.
             configfile = ./kconfigs/v6.19_nix_big.config;
-          };
-          #  "populate_latency": [2056.114, 2060.27, 2040.085, 2060.202, 2075.324, 2033.987, 2057.317, 2035.927, 2058.438, 2056.828, 2061.481, 2031.189, 2029.544, 2040.335, 2032.227, 2041.634, 2041.136, 2061.472, 2066.608, 2053.442, 2038.645, 2062.134, 2036.871, 2062.678, 2056.329, 2057.52, 2056.166, 2056.378, 2061.378, 2063.784]}
-          linuxPackages_firecracker-ephmap = prev.linuxPackages_custom {
-            version = "6.17.0-rc3";
-            src = inputs.kernel-firecracker-ephmap;
-            # Use a massive config since that's the only thing I know makes Docker work.
-            configfile = ./kconfigs/v6.17_nix_big.config;
           };
         }
       );
