@@ -30,7 +30,7 @@
     # just use the latest NixOS perf regardless of what is installed in the
     # system. To use the exact corresponding perf package, replace this with:
     # config.boot.kernelPackages.perf
-    pkgs.linuxPackages_latest.perf
+    pkgs.perf
   ];
 
   services.getty.autologinUser = "root";
