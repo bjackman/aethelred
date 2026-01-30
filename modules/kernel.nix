@@ -18,7 +18,6 @@
       kernelModules = [ ];
       includeDefaultModules = false;
     };
-    kernelPackages = pkgs.linuxPackages_firecracker;
   };
   hardware.enableAllHardware = false;
 

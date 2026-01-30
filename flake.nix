@@ -68,15 +68,24 @@
               ++ extraModules;
               specialArgs = { inherit self; };
             };
+          kernel-firecracker = { pkgs, ... }: {
+            boot.kernelPackages = pkgs.linuxPackages_firecracker;
+          };
+          kernel-gfp_unmapped = { pkgs, ... }: {
+            boot.kernelPackages = pkgs.linuxPackages_gfp_unmapped;
+            system.nixos.variantName = "gfp_unmapped";
+          };
         in
         {
-          base = mkConfig [ ];
+          base = mkConfig [ kernel-firecracker ];
           skip-flush = mkConfig [
+            kernel-firecracker
             {
               boot.kernelParams = [ "kvm.guest_memfd_tlb_flush=0" ];
               system.nixos.variantName = "skip-flush";
             }
           ];
+          gfp_unmapped = mkConfig [ kernel-gfp_unmapped ];
         };
 
       overlays.firecracker = (
