@@ -96,7 +96,7 @@
       overlays.firecracker = (
         final: prev: {
           linuxPackages_firecracker = prev.linuxPackages_custom {
-            version = "6.18.0";
+            version = "6.19.0-rc4-next-20260109";
             src = inputs.kernel-firecracker;
             # Use a massive config since that's the only thing I know makes Docker work.
             # This one has at least been through a make localmodconfig dance.

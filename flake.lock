@@ -145,11 +145,11 @@
     "kernel-firecracker": {
       "flake": false,
       "locked": {
-        "lastModified": 1769787918,
-        "narHash": "sha256-Ji9BLStc/Bxn31nBfUlrLGubollK5u1o4EYK4fZy4b4=",
+        "lastModified": 1769791279,
+        "narHash": "sha256-RtvloZfji2eca2KRW3a6U6f1CYhtDHTvIK0RrBgPE10=",
         "owner": "bjackman",
         "repo": "linux",
-        "rev": "dd8052d2173c6f53d4a8e1c8a8efb8100c3bdaf1",
+        "rev": "ad59cd7f15b4f838e9ccbe63da1e29b8de0cb909",
         "type": "github"
       },
       "original": {
