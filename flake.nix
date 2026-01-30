@@ -77,7 +77,12 @@
           };
         in
         {
-          base = mkConfig [ kernel-firecracker ];
+          base = mkConfig [
+            kernel-firecracker
+            {
+              boot.kernelParams = [ "kvm.guest_memfd_tlb_flush=1" ];
+            }
+          ];
           skip-flush = mkConfig [
             kernel-firecracker
             {
