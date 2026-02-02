@@ -77,6 +77,9 @@
           };
         in
         {
+          # For running with the normal NixOS kernel, useful for checking
+          # functional bits.
+          nixos = mkConfig [ ];
           base = mkConfig [
             kernel-firecracker
             {
