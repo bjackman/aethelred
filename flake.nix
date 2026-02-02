@@ -14,7 +14,7 @@
     };
     kernel-gfp_unmapped = {
       # Similar to above, but merged with my __GFP_UNMAPPED support
-      url = "github:bjackman/linux?ref=firecracker-host-2+page_alloc-unmapped";
+      url = "github:bjackman/linux?ref=firecracker-host-4+page_alloc-unmapped";
       flake = false;
     };
     kernel-benchmarks-nix = {
