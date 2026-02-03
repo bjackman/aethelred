@@ -55,6 +55,7 @@
     ];
     diskSize = 1024 * 32;
     cores = 64;
+    memorySize = 1024 * 128;
   };
 
   # Make things work nice when using SSH in Kity

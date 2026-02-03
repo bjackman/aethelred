@@ -33,4 +33,6 @@
   ];
 
   services.getty.autologinUser = "root";
+
+  boot.crashDump.enable = true;
 }
