@@ -39,4 +39,6 @@
     enable = true;
     reservedMemory = "1G";
   };
+  # Need root login password for crash kernel. hunter2
+  users.users.root.hashedPassword = "$6$tTuhmmP./Fie2O1M$q8AA.WWHO.iQu5ImeQ2/sKRZbLkxSyWyZhI8PFwIUfiqMMx1ctJK/PD91Qk5LxslIuWDA0SFKw9njNWdvtjhh.";
 }
