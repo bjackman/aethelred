@@ -53,6 +53,7 @@
       "-bios"
       "qboot.rom"
     ];
+    diskSize = 1024 * 32;
   };
 
   # Make things work nice when using SSH in Kity
