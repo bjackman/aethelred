@@ -34,5 +34,10 @@
 
   services.getty.autologinUser = "root";
 
-  boot.crashDump.enable = true;
+  boot.crashDump = {
+    enable = true;
+    reservedMemory = "1G";
+  };
+
+  boot.initrd.kernelModules = [ "nvme" "ext4" ];
 }
