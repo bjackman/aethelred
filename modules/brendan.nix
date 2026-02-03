@@ -54,6 +54,7 @@
       "qboot.rom"
     ];
     diskSize = 1024 * 32;
+    cores = 64;
   };
 
   # Make things work nice when using SSH in Kity
