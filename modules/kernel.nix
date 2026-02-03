@@ -15,7 +15,8 @@
     # faster. But this doesn't work.
     initrd = {
       availableKernelModules = [ ];
-      kernelModules = [ ];
+      # Enable storage drivers in initrd, maybe this helps with crashdump stuff?
+      kernelModules = [ "nvme" "ext4" ];
       includeDefaultModules = false;
     };
   };
@@ -38,6 +39,4 @@
     enable = true;
     reservedMemory = "1G";
   };
-  # Enable storage drivers in initrd, maybe this helps with crashdump stuff?
-  boot.initrd.kernelModules = [ "nvme" "ext4" ];
 }
