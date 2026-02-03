@@ -30,6 +30,6 @@
     enable = true;
     reservedMemory = "1G";
   };
-
+  # Enable storage drivers in initrd, maybe this helps with crashdump stuff?
   boot.initrd.kernelModules = [ "nvme" "ext4" ];
 }
