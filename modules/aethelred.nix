@@ -21,5 +21,5 @@
   # Should then be able to read this console output from the PiKVM with just cat
   # /dev/ttyGS0.
   boot.initrd.kernelModules = [ "cdc_acm" ];
-  boot.kernelParams = [ "console=tty1" "console=ttyACM0" ];
+  boot.kernelParams = [ "console=tty1" ];
 }
