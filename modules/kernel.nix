@@ -23,7 +23,7 @@
     # Send kernel logs to the PiKVM over the LAN.
     # Note this is extremely fragile, even includes the local IP.
     kernelParams = [
-      "netconsole=6666@100.76.39.100/eno2,6666@100.76.39.115/e4:5f:01:fa:ef:24"
+      "netconsole=6666@100.76.39.116/eno2,6666@100.76.39.115/e4:5f:01:fa:ef:24"
       "loglevel=8"
     ];
   };
