@@ -162,11 +162,11 @@
     "kernel-gfp_unmapped": {
       "flake": false,
       "locked": {
-        "lastModified": 1770731205,
-        "narHash": "sha256-S4ZxVrw1IKmTvhAGcjv6i/z7QrHV0d3Gd22Vn7k08vY=",
+        "lastModified": 1770826167,
+        "narHash": "sha256-bnH5EeUd9p4oMYn079ulM2Uagh8fhphw9EOlSUfNOWQ=",
         "owner": "bjackman",
         "repo": "linux",
-        "rev": "ca28603be889dbfe920f1115e4c07079368ad6a2",
+        "rev": "1a5b95c3b117d1410c5b010e5813845427b4969b",
         "type": "github"
       },
       "original": {
