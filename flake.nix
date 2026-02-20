@@ -14,7 +14,7 @@
     };
     kernel-gfp_unmapped = {
       # Similar to above, but merged with my __GFP_UNMAPPED support
-      url = "github:bjackman/linux?ref=firecracker-host-4+page_alloc-unmapped";
+      url = "github:bjackman/linux?ref=firecracker-host-5+page_alloc-unmapped";
       flake = false;
     };
     kernel-benchmarks-nix = {
@@ -106,7 +106,7 @@
             configfile = ./kconfigs/v6.19_nix_big.config;
           };
           linuxPackages_gfp_unmapped = prev.linuxPackages_custom {
-            version = "6.19.0-rc4-next-20260109";
+            version = "6.19.0-next-20260219";
             src = inputs.kernel-gfp_unmapped;
             # Use a massive config since that's the only thing I know makes Docker work.
             # This one has at least been through a make localmodconfig dance.
