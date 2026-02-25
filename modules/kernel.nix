@@ -25,6 +25,7 @@
     kernelParams = [
       "netconsole=6666@100.76.39.116/eno2,6666@100.76.39.115/e4:5f:01:fa:ef:24"
       "loglevel=8"
+      "nokaslr"
     ];
   };
   hardware.enableAllHardware = false;
