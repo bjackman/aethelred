@@ -19,7 +19,7 @@
     };
     kernel-benchmarks-nix = {
       # Using an experimental new version of this thing.
-      url = "github:bjackman/kernel-benchmarks-nix?ref=v2";
+      url = "github:bjackman/kernel-benchmarks-nix";
       inputs.nixpkgs.follows = "nixpkgs";
       # Pin firecracker to a version that works with the kernels above.
       inputs.firecracker.url = "github:firecracker-microvm/firecracker?rev=d043dc54b7326350b1c9b715cf784b06f5547d7f";
