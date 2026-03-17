@@ -176,6 +176,23 @@
         "type": "github"
       }
     },
+    "kernel-next": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1773337753,
+        "narHash": "sha256-dtQSac3gQJAiS8Fn0nLBXrnWxuJiB2B/le7+9U+0dLg=",
+        "owner": "bjackman",
+        "repo": "linux",
+        "rev": "5c9e55fecf9365890c64f14761a80f9413a3b1d1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "bjackman",
+        "ref": "next-20260312",
+        "repo": "linux",
+        "type": "github"
+      }
+    },
     "limmat": {
       "inputs": {
         "flake-utils": "flake-utils_3",
@@ -284,6 +301,7 @@
         "kernel-benchmarks-nix": "kernel-benchmarks-nix",
         "kernel-firecracker": "kernel-firecracker",
         "kernel-gfp_unmapped": "kernel-gfp_unmapped",
+        "kernel-next": "kernel-next",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable"
       }

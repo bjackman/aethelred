@@ -24,6 +24,12 @@
       # Pin firecracker to a version that works with the kernels above.
       inputs.firecracker.url = "github:firecracker-microvm/firecracker?rev=d043dc54b7326350b1c9b715cf784b06f5547d7f";
     };
+    kernel-next = {
+      # Proper linux-next repository causes nix flake update to hang for some reason
+      # url = "git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git?ref=refs/tags/next-20260312";
+      url = "github:bjackman/linux?ref=next-20260312";
+      flake = false;
+    };
   };
 
   outputs =
@@ -75,6 +81,10 @@
             boot.kernelPackages = pkgs.linuxPackages_gfp_unmapped;
             system.nixos.variantName = "gfp_unmapped";
           };
+          kernel-next = { pkgs, ... }: {
+            boot.kernelPackages = pkgs.linuxPackages_next;
+            system.nixos.variantName = "next";
+          };
         in
         {
           # For running with the normal NixOS kernel, useful for checking
@@ -94,6 +104,7 @@
             }
           ];
           gfp_unmapped = mkConfig [ kernel-gfp_unmapped ];
+          next = mkConfig [ kernel-next ];
         };
 
       overlays.firecracker = (
@@ -110,6 +121,11 @@
             src = inputs.kernel-gfp_unmapped;
             # Use a massive config since that's the only thing I know makes Docker work.
             # This one has at least been through a make localmodconfig dance.
+            configfile = ./kconfigs/v6.19_nix_big.config;
+          };
+          linuxPackages_next = prev.linuxPackages_custom {
+            version = "7.0.0-rc3-next-20260312";
+            src = inputs.kernel-gfp_unmapped;
             configfile = ./kconfigs/v6.19_nix_big.config;
           };
         }
