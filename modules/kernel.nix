@@ -16,7 +16,10 @@
     initrd = {
       availableKernelModules = [ ];
       # igc is the NIC driver, need that for netconsole to work.
-      kernelModules = [ "igc" "netconsole" ];
+      kernelModules = [
+        "igc"
+        "netconsole"
+      ];
       includeDefaultModules = false;
     };
 

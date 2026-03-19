@@ -10,7 +10,8 @@
     tmp.useTmpfs = true;
   };
 
-  system.nixos.label = let
+  system.nixos.label =
+    let
       rev = config.system.configurationRevision;
       shortRev = if rev != null then builtins.substring 0 7 rev else "dirty";
     in
