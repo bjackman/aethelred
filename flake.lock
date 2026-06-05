@@ -10,11 +10,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780063042,
-        "narHash": "sha256-NtxGCkImJxTbuBxVrG3iCB8Pwi9CiVj5zj6g2yS9qG0=",
+        "lastModified": 1780593888,
+        "narHash": "sha256-iGX6OqD+F5+oJSDz8Hh71u7+wbb6/jcRUYQbhTC/Xts=",
         "owner": "bjackman",
         "repo": "falba",
-        "rev": "604b1d37feb811bdf2fcf8407a6879fdab97dc4a",
+        "rev": "1c94ab7822c3eb318c0b5203da5cbb20fa858fae",
         "type": "github"
       },
       "original": {
@@ -130,11 +130,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1780590619,
-        "narHash": "sha256-6lQTWBGogy8h5JcVpNgLMpQNanzPsjt1EDbQW/BGonE=",
+        "lastModified": 1780663216,
+        "narHash": "sha256-w+fC1rTvS+jFL80VUFjXcWXIKe6+5/P7jv8d7Hsmvh8=",
         "owner": "bjackman",
         "repo": "kernel-benchmarks-nix",
-        "rev": "3133efde0b4504ad9b4183a37f5d481c2bbacbdb",
+        "rev": "270005f37e4a348aad1ee6d230801840016ace72",
         "type": "github"
       },
       "original": {
@@ -205,11 +205,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1768225043,
-        "narHash": "sha256-YQF4P22vEVt59Mf1U7s6IKOI+B+HfUW2WWEHessAtbk=",
+        "lastModified": 1773399761,
+        "narHash": "sha256-XTfderP/fpprRCYjJ/K905HB6hLGVojZuermfj840aY=",
         "owner": "bjackman",
         "repo": "limmat",
-        "rev": "0183e96bb7ae7e6f91a121a2894117c665380edb",
+        "rev": "c1f6ed5c56473a55d6fd34314bc658c617e03ba5",
         "type": "github"
       },
       "original": {

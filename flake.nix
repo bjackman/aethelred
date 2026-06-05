@@ -44,13 +44,20 @@
     flake-utils.lib.eachDefaultSystem (
       system:
       let
-        pkgs = import nixpkgs { inherit system; };
+        pkgs = import nixpkgs {
+          inherit system;
+          overlays = [ kernel-benchmarks-nix.overlays.default ];
+        };
       in
       {
         formatter = pkgs.nixfmt-tree;
 
         devShells.default = pkgs.mkShell {
-          packages = with pkgs; [ nixos-rebuild ];
+          packages = with pkgs; [
+            nixos-rebuild
+            falba
+            run-benchprog
+          ];
         };
       }
     )
