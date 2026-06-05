@@ -58,6 +58,7 @@
             falba
             run-benchprog
           ];
+          FALBA_PARSERS_PATH = kernel-benchmarks-nix.packages.${system}.falba-parsers;
         };
       }
     )
