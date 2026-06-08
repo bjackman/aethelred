@@ -26,8 +26,8 @@
     };
     kernel-next = {
       # Proper linux-next repository causes nix flake update to hang for some reason
-      # url = "git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git?ref=refs/tags/next-20260312";
-      url = "github:bjackman/linux?ref=next-20260312";
+      # url = "git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git?ref=refs/tags/next-20260319";
+      url = "github:bjackman/linux?ref=next-20260319";
       flake = false;
     };
   };
@@ -141,14 +141,14 @@
             configfile = ./kconfigs/v6.19_nix_big.config;
           };
           linuxPackages_gfp_unmapped = prev.linuxPackages_custom {
-            version = "7.0.0-rc3-next-20260312";
+            version = "7.0.0-rc4-next-20260319";
             src = inputs.kernel-gfp_unmapped;
             # Use a massive config since that's the only thing I know makes Docker work.
             # This one has at least been through a make localmodconfig dance.
             configfile = ./kconfigs/v6.19_nix_big.config;
           };
           linuxPackages_next = prev.linuxPackages_custom {
-            version = "7.0.0-rc3-next-20260312";
+            version = "7.0.0-rc4-next-20260319";
             src = inputs.kernel-gfp_unmapped;
             configfile = ./kconfigs/v6.19_nix_big.config;
           };

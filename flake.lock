@@ -163,11 +163,11 @@
     "kernel-gfp_unmapped": {
       "flake": false,
       "locked": {
-        "lastModified": 1779062673,
-        "narHash": "sha256-AD8C57FWGAEK7zq3aWBkwBXkck37/WmyPZojmFfyY3c=",
+        "lastModified": 1780927143,
+        "narHash": "sha256-1JjvW1i/G4v8MS3/SSeu9copNSvpg9xhBRyuRIrtfpA=",
         "owner": "bjackman",
         "repo": "linux",
-        "rev": "5d008889275e93eceb05e247579debd1944483f3",
+        "rev": "80ccf62b779f79a7600f619e1baf6682e0897df9",
         "type": "github"
       },
       "original": {
@@ -180,16 +180,16 @@
     "kernel-next": {
       "flake": false,
       "locked": {
-        "lastModified": 1773337753,
-        "narHash": "sha256-dtQSac3gQJAiS8Fn0nLBXrnWxuJiB2B/le7+9U+0dLg=",
+        "lastModified": 1773931215,
+        "narHash": "sha256-TqUujiBDfzn1m1Xcf++A60JACdoaltWKSfAA1YOFxVc=",
         "owner": "bjackman",
         "repo": "linux",
-        "rev": "5c9e55fecf9365890c64f14761a80f9413a3b1d1",
+        "rev": "b5d083a3ed1e2798396d5e491432e887da8d4a06",
         "type": "github"
       },
       "original": {
         "owner": "bjackman",
-        "ref": "next-20260312",
+        "ref": "next-20260319",
         "repo": "linux",
         "type": "github"
       }
