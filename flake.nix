@@ -110,24 +110,7 @@
               boot.kernelParams = [ "kvm.guest_memfd_tlb_flush=1" ];
             }
           ];
-          skip-flush = mkConfig [
-            kernel-firecracker
-            {
-              boot.kernelParams = [ "kvm.guest_memfd_tlb_flush=0" ];
-              system.nixos.variantName = "skip-flush";
-            }
-          ];
           gfp_unmapped = mkConfig [ kernel-gfp_unmapped ];
-          secretmem-skip-flush = mkConfig [
-            (
-              { pkgs, ... }:
-              {
-                boot.kernelPackages = pkgs.linuxPackages_gfp_unmapped;
-                boot.kernelParams = [ "secretmem.flush=0" ];
-                system.nixos.variantName = "secretmem-skip-flush";
-              }
-            )
-          ];
           next = mkConfig [ kernel-next ];
         };
 
