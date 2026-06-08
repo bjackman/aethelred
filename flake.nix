@@ -149,7 +149,7 @@
           };
           linuxPackages_next = prev.linuxPackages_custom {
             version = "7.0.0-rc4-next-20260319";
-            src = inputs.kernel-gfp_unmapped;
+            src = inputs.kernel-next;
             configfile = ./kconfigs/v6.19_nix_big.config;
           };
         }
