@@ -10,11 +10,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780593888,
-        "narHash": "sha256-iGX6OqD+F5+oJSDz8Hh71u7+wbb6/jcRUYQbhTC/Xts=",
+        "lastModified": 1780923651,
+        "narHash": "sha256-zu4hruweeRdLdbV47pxnRWyJdALfIHjOYGl8TLTtzYU=",
         "owner": "bjackman",
         "repo": "falba",
-        "rev": "1c94ab7822c3eb318c0b5203da5cbb20fa858fae",
+        "rev": "2ca43bdb365842099b4d217e518d391b6c4329b9",
         "type": "github"
       },
       "original": {
@@ -130,11 +130,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1780665331,
-        "narHash": "sha256-xO0IaifgD1khrnekcWUHujUYSHFoIKU7cYTbnOhn0Cc=",
+        "lastModified": 1780928117,
+        "narHash": "sha256-/SKRRtN0xkK1ms0azQNTtyjVmmpknjAGOMKnrqolc/I=",
         "owner": "bjackman",
         "repo": "kernel-benchmarks-nix",
-        "rev": "b63a4fcd29ab47529abe00eaf3cc72e739d51468",
+        "rev": "f4170b5765c57fe609c6508ea47a7c5d45d5e073",
         "type": "github"
       },
       "original": {
