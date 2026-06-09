@@ -43,21 +43,36 @@ reboot_and_wait() {
     done
 }
 
-for config_name in "gfp_unmapped" "next"; do
-    flakeref=".#nixosConfigurations.$config_name.config.system.build.toplevel"
+ensure_system_booted() {
+    local config_name="$1"
+    local target="$2"
+    local timeout="$3"
+
+    local flakeref=".#nixosConfigurations.$config_name.config.system.build.toplevel"
+    local system_store_path
     system_store_path=$(nix build --no-link --print-out-paths "$flakeref")
-    current_system=$(ssh "$TARGET" readlink /run/current-system)
-    booted_system=$(ssh "$TARGET" readlink /run/booted-system)
+
+    local current_system
+    current_system=$(ssh "$target" readlink /run/current-system)
+    local booted_system
+    booted_system=$(ssh "$target" readlink /run/booted-system)
 
     if [ "$booted_system" != "$system_store_path" ]; then
         if [ "$current_system" != "$system_store_path" ]; then
+            echo "Switching $target to $config_name ($system_store_path)..."
             # The --no-reexec thing is a workaround for what I think is an issue with
             # using nixos-rebuild remotely from a non-NixOS system (error: file
             # 'nixos-config' was not found in the Nix search path).
-            nixos-rebuild --target-host "$TARGET" --sudo switch --store-path "$system_store_path" --no-reexec
+            nixos-rebuild --target-host "$target" --sudo switch --store-path "$system_store_path" --no-reexec
         fi
-        reboot_and_wait "$TARGET" "$BOOT_TIMEOUT_S"
+        reboot_and_wait "$target" "$timeout"
+    else
+        echo "$target is already booted into $config_name ($system_store_path)"
     fi
+}
+
+for config_name in "gfp_unmapped" "next"; do
+    ensure_system_booted "$config_name" "$TARGET" "$BOOT_TIMEOUT_S"
 
     for i in $(seq "$ITERATIONS"); do
         echo "Running iteration $i of $ITERATIONS..."
