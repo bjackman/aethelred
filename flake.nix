@@ -134,9 +134,10 @@
               src,
               baseVersion,
               configfile,
+              suppressRev ? false,
             }:
             let
-              shortRev = if src ? rev then builtins.substring 0 12 src.rev else "";
+              shortRev = if suppressRev then "" else (if src ? rev then builtins.substring 0 12 src.rev else "");
               # This is what LOCALVERSION_AUTO would do in a git repo.
               localVersion = "-g${shortRev}";
               kernelVersion = "${baseVersion}${localVersion}";
@@ -163,6 +164,8 @@
           };
           linuxPackages_next = mkCustomKernelPackages {
             src = inputs.kernel-next;
+            # Make clear that this version is pure linux-next.
+            suppressRev = true;
             baseVersion = "7.0.0-rc4-next-20260319";
             configfile = ./kconfigs/v6.19_nix_big.config;
           };
