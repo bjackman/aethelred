@@ -48,9 +48,13 @@
           inherit system;
           overlays = [ kernel-benchmarks-nix.overlays.default ];
         };
+        experiment = pkgs.callPackage ./experiment.nix { };
       in
       {
         formatter = pkgs.nixfmt-tree;
+
+        packages.experiment = experiment;
+        packages.default = experiment;
 
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
