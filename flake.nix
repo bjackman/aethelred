@@ -119,7 +119,8 @@
         };
 
       overlays.firecracker = (
-        final: prev: let
+        final: prev:
+        let
           # Instead of linuxPackages_custom, use this special helper that knows
           # how to let us set a special custom version. This lets us inject the
           # git revision into it, since CONFIG_LOCAL_VERSION_AUTO doesn't work
@@ -128,21 +129,28 @@
           # baseVersion is the portion of the version string that is baked into
           # the source tree (this comes from the Makefiles, plus for linux-next
           # there is ./localversion-next file).
-          mkCustomKernelPackages = { src, baseVersion, configfile }: let
-            shortRev = if src ? rev then builtins.substring 0 12 src.rev else "";
-            # This is what LOCALVERSION_AUTO would do in a git repo.
-            localVersion = "-g${shortRev}";
-            kernelVersion = "${baseVersion}${localVersion}";
-            customKernel = prev.linuxManualConfig {
-              version = baseVersion;
-              inherit src configfile;
-              modDirVersion = kernelVersion;
-              extraMakeFlags = [ "LOCALVERSION=${localVersion}" ];
-              allowImportFromDerivation = true;
-            };
-          in
+          mkCustomKernelPackages =
+            {
+              src,
+              baseVersion,
+              configfile,
+            }:
+            let
+              shortRev = if src ? rev then builtins.substring 0 12 src.rev else "";
+              # This is what LOCALVERSION_AUTO would do in a git repo.
+              localVersion = "-g${shortRev}";
+              kernelVersion = "${baseVersion}${localVersion}";
+              customKernel = prev.linuxManualConfig {
+                version = baseVersion;
+                inherit src configfile;
+                modDirVersion = kernelVersion;
+                extraMakeFlags = [ "LOCALVERSION=${localVersion}" ];
+                allowImportFromDerivation = true;
+              };
+            in
             prev.linuxPackagesFor customKernel;
-        in {
+        in
+        {
           linuxPackages_firecracker = mkCustomKernelPackages {
             src = inputs.kernel-firecracker;
             baseVersion = "6.19.0-rc4-next-20260109";
