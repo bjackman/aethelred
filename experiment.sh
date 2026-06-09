@@ -5,6 +5,7 @@ set -eu -o pipefail
 TARGET=brendan@aethelred
 ITERATIONS=3
 BOOT_TIMEOUT_S=60
+CONFIGS=("gfp_unmapped" "next")
 
 reboot_and_wait() {
     local target="$1"
@@ -45,12 +46,9 @@ reboot_and_wait() {
 
 ensure_system_booted() {
     local config_name="$1"
-    local target="$2"
-    local timeout="$3"
-
-    local flakeref=".#nixosConfigurations.$config_name.config.system.build.toplevel"
-    local system_store_path
-    system_store_path=$(nix build --no-link --print-out-paths "$flakeref")
+    local system_store_path="$2"
+    local target="$3"
+    local timeout="$4"
 
     local current_system
     current_system=$(ssh "$target" readlink /run/current-system)
@@ -71,8 +69,32 @@ ensure_system_booted() {
     fi
 }
 
-for config_name in "gfp_unmapped" "next"; do
-    ensure_system_booted "$config_name" "$TARGET" "$BOOT_TIMEOUT_S"
+# Build all configs upfront and get their paths.
+declare -A config_paths
+for config_name in "${CONFIGS[@]}"; do
+    echo "Building $config_name..."
+    flakeref=".#nixosConfigurations.$config_name.config.system.build.toplevel"
+    config_paths[$config_name]=$(nix build --no-link --print-out-paths "$flakeref")
+done
+
+booted_system=$(ssh "$TARGET" readlink /run/booted-system)
+
+# Sort CONFIGS: put the currently booted one first to avoid unnecessary reboot
+sorted_configs=()
+for config_name in "${CONFIGS[@]}"; do
+    if [ "${config_paths[$config_name]}" = "$booted_system" ]; then
+        echo "Target is already booted into $config_name. Will run it first."
+        sorted_configs+=("$config_name")
+    fi
+done
+for config_name in "${CONFIGS[@]}"; do
+    if [ "${config_paths[$config_name]}" != "$booted_system" ]; then
+        sorted_configs+=("$config_name")
+    fi
+done
+
+for config_name in "${sorted_configs[@]}"; do
+    ensure_system_booted "$config_name" "${config_paths[$config_name]}" "$TARGET" "$BOOT_TIMEOUT_S"
 
     for i in $(seq "$ITERATIONS"); do
         echo "Running iteration $i of $ITERATIONS..."
