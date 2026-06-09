@@ -2,6 +2,12 @@
 
 set -eu -o pipefail
 
+# Use host ssh to avoid NSS LDAP issues inside Nix env
+ssh() {
+    /usr/bin/ssh "$@"
+}
+export -f ssh
+
 TARGET=brendan@aethelred
 ITERATIONS=3
 BOOT_TIMEOUT_S=60
