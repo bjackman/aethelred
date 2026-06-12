@@ -159,14 +159,14 @@
           };
           linuxPackages_gfp_unmapped = mkCustomKernelPackages {
             src = inputs.kernel-gfp_unmapped;
-            baseVersion = "7.0.0-rc4-next-2026-610";
+            baseVersion = "7.1.0-rc7-next-20260610";
             configfile = ./kconfigs/v6.19_nix_big.config;
           };
           linuxPackages_next = mkCustomKernelPackages {
             src = inputs.kernel-next;
             # Make clear that this version is pure linux-next.
             suppressRev = true;
-            baseVersion = "7.0.0-rc4-next-2026-610";
+            baseVersion = "7.1.0-rc7-next-20260610";
             configfile = ./kconfigs/v6.19_nix_big.config;
           };
         }
