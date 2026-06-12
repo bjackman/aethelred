@@ -49,11 +49,13 @@
           overlays = [ kernel-benchmarks-nix.overlays.default ];
         };
         experiment = pkgs.callPackage ./experiment.nix { };
+        page-alloc-test = pkgs.linuxPackages.callPackage ./page-alloc-test { };
       in
       {
         formatter = pkgs.nixfmt-tree;
 
         packages.experiment = experiment;
+        packages.page-alloc-test = page-alloc-test;
         packages.default = experiment;
 
         devShells.default = pkgs.mkShell {

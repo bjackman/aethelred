@@ -30,6 +30,10 @@
       "loglevel=8"
       "nokaslr"
     ];
+
+    extraModulePackages = [
+      (config.boot.kernelPackages.callPackage ../page-alloc-test { })
+    ];
   };
   hardware.enableAllHardware = false;
 
