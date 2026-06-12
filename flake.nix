@@ -137,9 +137,9 @@
               suppressRev ? false,
             }:
             let
-              shortRev = if suppressRev then "" else (if src ? rev then builtins.substring 0 12 src.rev else "");
+              shortRev = if src ? rev then builtins.substring 0 12 src.rev else "";
               # This is what LOCALVERSION_AUTO would do in a git repo.
-              localVersion = "-g${shortRev}";
+              localVersion = if suppressRev then "" else "-g${shortRev}";
               kernelVersion = "${baseVersion}${localVersion}";
               customKernel = prev.linuxManualConfig {
                 version = baseVersion;
