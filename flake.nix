@@ -30,6 +30,12 @@
       url = "github:bjackman/linux?ref=next-20260610";
       flake = false;
     };
+    kernel-gfp-pessimisation = {
+      # Proper linux-next repository causes nix flake update to hang for some reason
+      # url = "git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git?ref=refs/tags/next-20260610";
+      url = "github:bjackman/linux?ref=gfp-pessimisation";
+      flake = false;
+    };
   };
 
   outputs =
@@ -105,6 +111,12 @@
               boot.kernelPackages = pkgs.linuxPackages_next;
               system.nixos.variantName = "next";
             };
+          kernel-gfp-pessimisation =
+            { pkgs, ... }:
+            {
+              boot.kernelPackages = pkgs.linuxPackages_gfp-pessimisation;
+              system.nixos.variantName = "gfp-pessimisation";
+            };
         in
         {
           # For running with the normal NixOS kernel, useful for checking
@@ -118,6 +130,7 @@
           ];
           gfp_unmapped = mkConfig [ kernel-gfp_unmapped ];
           next = mkConfig [ kernel-next ];
+          gfp-pessimisation = mkConfig [ kernel-gfp-pessimisation ];
         };
 
       overlays.firecracker = (
@@ -161,6 +174,11 @@
           };
           linuxPackages_gfp_unmapped = mkCustomKernelPackages {
             src = inputs.kernel-gfp_unmapped;
+            baseVersion = "7.1.0-rc7-next-20260610";
+            configfile = ./kconfigs/v6.19_nix_big.config;
+          };
+          linuxPackages_gfp-pessimisation = mkCustomKernelPackages {
+            src = inputs.kernel-gfp-pessimisation;
             baseVersion = "7.1.0-rc7-next-20260610";
             configfile = ./kconfigs/v6.19_nix_big.config;
           };

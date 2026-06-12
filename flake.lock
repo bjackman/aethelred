@@ -160,6 +160,23 @@
         "type": "github"
       }
     },
+    "kernel-gfp-pessimisation": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1781269610,
+        "narHash": "sha256-ZhvMhFNqj6DN/c9xG3Dv6GhOFXD5Icy/09uF87vfUpo=",
+        "owner": "bjackman",
+        "repo": "linux",
+        "rev": "e914c310070d5f43cebe9cd9987d5a94708afa81",
+        "type": "github"
+      },
+      "original": {
+        "owner": "bjackman",
+        "ref": "gfp-pessimisation",
+        "repo": "linux",
+        "type": "github"
+      }
+    },
     "kernel-gfp_unmapped": {
       "flake": false,
       "locked": {
@@ -301,6 +318,7 @@
         "flake-utils": "flake-utils",
         "kernel-benchmarks-nix": "kernel-benchmarks-nix",
         "kernel-firecracker": "kernel-firecracker",
+        "kernel-gfp-pessimisation": "kernel-gfp-pessimisation",
         "kernel-gfp_unmapped": "kernel-gfp_unmapped",
         "kernel-next": "kernel-next",
         "nixpkgs": "nixpkgs",
