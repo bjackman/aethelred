@@ -163,11 +163,11 @@
     "kernel-gfp_unmapped": {
       "flake": false,
       "locked": {
-        "lastModified": 1780927143,
-        "narHash": "sha256-1JjvW1i/G4v8MS3/SSeu9copNSvpg9xhBRyuRIrtfpA=",
+        "lastModified": 1781192453,
+        "narHash": "sha256-csmJeRZTrvaCdiHdc10TkcuJskEnk/Zav5kRIFvnm7k=",
         "owner": "bjackman",
         "repo": "linux",
-        "rev": "80ccf62b779f79a7600f619e1baf6682e0897df9",
+        "rev": "377e9222f8fc25911af5bb12f9ee68a4d424cc5d",
         "type": "github"
       },
       "original": {
@@ -180,16 +180,16 @@
     "kernel-next": {
       "flake": false,
       "locked": {
-        "lastModified": 1773931215,
-        "narHash": "sha256-TqUujiBDfzn1m1Xcf++A60JACdoaltWKSfAA1YOFxVc=",
+        "lastModified": 1781106717,
+        "narHash": "sha256-EmpvfaRjtFQf1IKOHb8Pr1v1g2JbzzcoYXt168aQsWQ=",
         "owner": "bjackman",
         "repo": "linux",
-        "rev": "b5d083a3ed1e2798396d5e491432e887da8d4a06",
+        "rev": "abe651837cb394f76d738a7a747322fca3bf17ba",
         "type": "github"
       },
       "original": {
         "owner": "bjackman",
-        "ref": "next-20260319",
+        "ref": "next-20260610",
         "repo": "linux",
         "type": "github"
       }
@@ -282,11 +282,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1780749050,
-        "narHash": "sha256-3av0pIjlOWQ6rDbNOmpUSvbNnJkGORQKKjb4LtCZsIY=",
+        "lastModified": 1781074563,
+        "narHash": "sha256-md8WlXOlfnIeHeOScMTTHFyf2d6iaTwPl2apR5EQ3P4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "a799d3e3886da994fa307f817a6bc705ae538eeb",
+        "rev": "9ae611a455b90cf061d8f332b977e387bda8e1ca",
         "type": "github"
       },
       "original": {

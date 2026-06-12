@@ -26,8 +26,8 @@
     };
     kernel-next = {
       # Proper linux-next repository causes nix flake update to hang for some reason
-      # url = "git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git?ref=refs/tags/next-20260319";
-      url = "github:bjackman/linux?ref=next-20260319";
+      # url = "git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git?ref=refs/tags/next-20260610";
+      url = "github:bjackman/linux?ref=next-20260610";
       flake = false;
     };
   };
@@ -159,14 +159,14 @@
           };
           linuxPackages_gfp_unmapped = mkCustomKernelPackages {
             src = inputs.kernel-gfp_unmapped;
-            baseVersion = "7.0.0-rc4-next-20260319";
+            baseVersion = "7.0.0-rc4-next-2026-610";
             configfile = ./kconfigs/v6.19_nix_big.config;
           };
           linuxPackages_next = mkCustomKernelPackages {
             src = inputs.kernel-next;
             # Make clear that this version is pure linux-next.
             suppressRev = true;
-            baseVersion = "7.0.0-rc4-next-20260319";
+            baseVersion = "7.0.0-rc4-next-2026-610";
             configfile = ./kconfigs/v6.19_nix_big.config;
           };
         }
